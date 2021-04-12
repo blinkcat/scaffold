@@ -1,23 +1,28 @@
 module.exports = function (api, options) {
   const { react = true, typescript = true } = options;
+  const nodeEnv = process.env.NODE_ENV;
+  // const isDev = nodeEnv === 'development';
+  // const isTest = nodeEnv === 'test';
+  const isProd = nodeEnv === 'production';
 
-  api.assertVersion("^7.0.0");
+  api.assertVersion('^7.0.0');
 
   return {
     presets: [
       /** @see https://babel.dev/docs/en/babel-preset-env */
-      [require("@babel/preset-env"), { useBuiltIns: "entry", corejs: 3 }],
+      [require('@babel/preset-env'), { useBuiltIns: 'entry', corejs: 3 }],
       /** @see https://babel.dev/docs/en/babel-preset-react */
-      react && require("@babel/preset-react"),
+      react && require('@babel/preset-react'),
       /** @see https://babel.dev/docs/en/babel-preset-typescript */
-      typescript && require("@babel/preset-typescript"),
+      typescript && require('@babel/preset-typescript'),
     ].filter(Boolean),
+
     plugins: [
       /** @see https://babel.dev/docs/en/babel-plugin-transform-runtime */
-      [
-        require("@babel/plugin-transform-runtime"),
-        { version: require("@babel/runtime/package.json").version },
-      ],
-    ],
+      [require('@babel/plugin-transform-runtime'), { version: require('@babel/runtime/package.json').version }],
+      /** @see https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types */
+      isProd &&
+        react && [require('babel-plugin-transform-react-remove-prop-types'), { mode: 'remove', removeImport: true }],
+    ].filter(Boolean),
   };
 };
