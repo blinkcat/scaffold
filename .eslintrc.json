@@ -2,6 +2,7 @@
  * @see https://eslint.org/
  */
 {
+  "root": true,
   "env": {
     "browser": true,
     "commonjs": true,

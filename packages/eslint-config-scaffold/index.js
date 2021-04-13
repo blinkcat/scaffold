@@ -1,3 +1,5 @@
 module.exports = {
-  extends: [],
+  /** @see https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb */
+  extends: ['airbnb-typescript'],
+  rules: {},
 };
