@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "typescript": "^4.2.4"
+  },
+  "eslintConfig": {
+    "extends": ["scaffold"]
+  },
+  "browserslist": {
+    "production": ["IE11"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+  }
+}

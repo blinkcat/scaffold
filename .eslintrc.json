@@ -12,16 +12,16 @@
   "extends": [
     "eslint:recommended",
     "plugin:node/recommended",
-    "plugin:prettier/recommended",
-    "plugin:jest/recommended"
+    "plugin:prettier/recommended"
+    // "plugin:jest/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 12
   },
-  "rules": {},
-  "settings": {
-    "jest": {
-      "version": 26
-    }
-  }
+  "rules": {}
+  // "settings": {
+  //   "jest": {
+  //     "version": 26
+  //   }
+  // }
 }

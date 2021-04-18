@@ -2,12 +2,15 @@
   "name": "create-scaffold",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "./index.js",
   "engines": {
     "node": ">=12"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "create-scaffold": "./index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +18,8 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^7.2.0",
-    "semver": "^7.3.5"
+    "fs-extra": "^9.1.0",
+    "semver": "^7.3.5",
+    "validate-npm-package-name": "^3.0.0"
   }
 }
